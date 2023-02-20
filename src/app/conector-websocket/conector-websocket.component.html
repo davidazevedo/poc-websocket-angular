@@ -1,0 +1,78 @@
+<div class="hm-gradient">
+  <div class="container mt-4">
+    <div class="container col-md-6 mb-6">
+      <div class="card near-moon-gradient form-white">
+        <div class="card-body">
+          <i class="logotipo"></i>
+          <br />
+          <br />
+          <!--Body-->
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input
+              value="172.16.238.16"
+              class="form-control"
+              placeholder="ex: 127.0.0.1"
+              type="text"
+              id="ip"
+            />
+            <label for="defaultForm-email"></label>
+          </div>
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <input
+              class="form-control"
+              placeholder="ex: 8080"
+              type="text"
+              id="port"
+            />
+            <label for="defaultForm-pass"></label>
+          </div>
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <textarea
+              class="form-control"
+              placeholder="ex: mensagem"
+              type="text"
+              id="message"
+            >
+            </textarea>
+            <label for="defaultForm-pass"></label>
+          </div>
+          <div class="btn-group-vertica btn-group-justified">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-primary" id="socketio">
+                Enviar Socket.io
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary bg-black"
+                id="sockjs"
+              >
+                Enviar SockJS
+              </button>
+            </div>
+            <br />
+            <br />
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="websocketnativo"
+              >
+                Enviar WebSocket nativo
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="httpsrequest"
+              >
+                Enviar httpsRequest
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
