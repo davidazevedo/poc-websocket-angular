@@ -4,70 +4,52 @@
       <div class="card near-moon-gradient form-white">
         <div class="card-body">
           <i class="logotipo"></i>
-          <br />
-          <br />
           <!--Body-->
-          <div class="md-form">
-            <i class="fa fa-envelope prefix grey-text"></i>
+          <div class="input-group mb-3">
             <input
-              value="172.16.238.16"
-              class="form-control"
-              placeholder="ex: 127.0.0.1"
-              type="text"
-              id="ip"
+            value="172.16.238.16"
+            class="form-control"
+            placeholder="ex: 127.0.0.1"
+            type="text"
+            id="ip"
+            [(ngModel)]="push.Ip"
             />
-            <label for="defaultForm-email"></label>
+            <div class="input-group-append">
+              <button type="button" id="socketio" class="btn btn-primary"  (click)="connect()">
+                Conectar
+              </button>
+            </div>
           </div>
-          <div class="md-form">
+          <div class="md-form" >
             <i class="fa fa-lock prefix grey-text"></i>
             <input
+
               class="form-control"
               placeholder="ex: 8080"
-              type="text"
+              type="text" disabled="isConnect"
               id="port"
+              [(ngModel)]="push.Port"
             />
             <label for="defaultForm-pass"></label>
           </div>
           <div class="md-form">
             <i class="fa fa-lock prefix grey-text"></i>
-            <textarea
+            <textarea disabled="isConnect"
               class="form-control"
+              rows="10" cols="50"
               placeholder="ex: mensagem"
               type="text"
               id="message"
+              height="450"
+              [(ngModel)]="push.Message"
             >
             </textarea>
             <label for="defaultForm-pass"></label>
           </div>
           <div class="btn-group-vertica btn-group-justified">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-primary" id="socketio">
-                Enviar Socket.io
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary bg-black"
-                id="sockjs"
-              >
-                Enviar SockJS
-              </button>
-            </div>
-            <br />
-            <br />
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="websocketnativo"
-              >
-                Enviar WebSocket nativo
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                id="httpsrequest"
-              >
-                Enviar httpsRequest
+              <button disabled="isConnect" type="button" id="socketio" class="btn btn-primary"  (click)="onMessage()">
+                Enviar Mensagem
               </button>
             </div>
           </div>
